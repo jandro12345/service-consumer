@@ -44,7 +44,7 @@ async def verification_token(Token: Annotated[Any, Header()]):
 
 
 def connect_to_rabbitmq():
-    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbit-queue'))
+    connection = pika.BlockingConnection(pika.ConnectionParameters('rabbitmq', 5672))
     channel = connection.channel()
     return channel
 
